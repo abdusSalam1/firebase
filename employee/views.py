@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from rest_framework.generics import ListCreateAPIView
 
-# Create your views here.
+from employee.serializers import EmployeeSerializer
+
+
+class EmployeeList(ListCreateAPIView):
+
+    def get_serializer_class(self):
+        return EmployeeSerializer
