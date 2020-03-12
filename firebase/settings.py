@@ -104,7 +104,7 @@ firebaseConfig = {
     'storageBucket': "banax-1579248360812.appspot.com",
     'messagingSenderId': "421363417722",
     'appId': "1:421363417722:web:2b06160afedc349f73b1c3",
-    "serviceAccount": "serviceAccountCredentials.json"
+    "serviceAccount": "banax_key.json"
 }
 
 # Internationalization
