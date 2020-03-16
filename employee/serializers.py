@@ -12,5 +12,9 @@ class EmployeeSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         fire_store_config = pyrebase.initialize_app(firebaseConfig)
+        auth = fire_store_config.auth()
+        user = auth.sign_in_with_email_and_password("abdus.salam111@yahoo.com", "5qVpDGQy4tSEcR5")
         db = fire_store_config.database()
-        db.child('employee').push(validated_data)
+        print("Got to the saving ")
+        db.child('employee').push({"name":"akram", "age":27}, user['idToken'])
+        print("Saved Data")
