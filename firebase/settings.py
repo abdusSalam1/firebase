@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+from firebase_admin import credentials
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
@@ -96,16 +98,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-firebaseConfig = {
-    'apiKey': "AIzaSyDY4WMie_x__eABK_yJ6bmQhK5_yGzMODI",
-    'authDomain': "banax-1579248360812.firebaseapp.com",
-    'databaseURL': "https://banax-1579248360812.firebaseio.com",
-    'projectId': "banax-1579248360812",
-    'storageBucket': "banax-1579248360812.appspot.com",
-    'messagingSenderId': "421363417722",
-    'appId': "1:421363417722:web:2b06160afedc349f73b1c3",
-    # "serviceAccount": "firebase/banax_key.json"
-}
+firestore_credentials = credentials.Certificate("firebase/banax_key.json")
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
